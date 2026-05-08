@@ -32,3 +32,10 @@ public class Library {
 			System.out.println (bookName + " does not exist!");
 		}
 	}
+
+	// Print all books in the library
+	public void printAllBooks (HashMap<String, Book> store) {
+		for (String i : store.keySet ()) {
+			System.out.println (store.get (i));
+		}
+	}
