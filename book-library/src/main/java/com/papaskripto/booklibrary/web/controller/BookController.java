@@ -2,6 +2,7 @@ package com.papaskripto.booklibrary.web.controller;
 
 import com.papaskripto.booklibrary.data.entity.BookEntity;
 import com.papaskripto.booklibrary.data.repository.BookRepository;
+import com.papaskripto.booklibrary.service.BookService;
 import com.papaskripto.booklibrary.web.model.Book;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
@@ -17,18 +18,15 @@ import java.util.List;
 
 public class BookController {
 
-    private final BookRepository bookRepository;
+    private final BookService bookService;
 
-    public BookController (BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
+    public BookController (BookService bookService) {
+        this.bookService = bookService;
     }
 
     @GetMapping
     public String libraryPage (Model model) {
-        List<BookEntity> bookEntities = this.bookRepository.findAll();
-        List<Book> books = new ArrayList<>(bookEntities.size ());
-        bookEntities.forEach(book -> books.add(new Book(book.getId(), book.getTitle(), book.getAuthor(), book.getIsbn(), book.getPublisher(), book.getPublicationDate(), book.getPages(), book.getLanguage(), book.getQuantity(), book.getCreatedAt(), book.getUpdatedAt())));
-        model.addAttribute("books", books);
+        model.addAttribute("books", this.bookService.listBooks());
         return "library";
     }
 }
