@@ -28,7 +28,7 @@ Multi-tenant library management system. Single application, multiple libraries.
 - Send announcements
 
 ### Database Design (Scalable)
-
+```
 Users
 -----
 id
@@ -66,6 +66,6 @@ borrower
 date
 returned_date
 notes
-
+```
 Relationships: Every books belongs to one library, and every library belongs to one user.
 
