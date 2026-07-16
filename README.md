@@ -10,14 +10,14 @@ Multi-tenant library management system. Single application, multiple libraries.
 - Users login with their credentials.
 - They're taken to their own library (to manage).
   
-###### Roles
+##### Roles
 
-######## Library Owner
+###### Library Owner
 - Create and manage library
 - Add, edit, and delete books
 - Record lending, returns, sales, and losses
 - View library reports (only for their library)
-######## Platform Admin
+###### Platform Admin
 - View registered users
 - Suspend or reactivate accounts
 - Reset accounts
