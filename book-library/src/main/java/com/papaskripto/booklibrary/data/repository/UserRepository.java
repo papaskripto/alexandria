@@ -1,4 +1,4 @@
-package com.papaskripto.booklibrary.data;
+package com.papaskripto.booklibrary.data.repository;
 
 import com.papaskripto.booklibrary.data.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
